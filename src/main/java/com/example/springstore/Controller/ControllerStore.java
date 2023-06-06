@@ -12,16 +12,18 @@ import java.util.Set;
 @RequestMapping("/order")
 public class ControllerStore {
     private final ServiseStore serviseStore;
+
     public ControllerStore(ServiseStore serviseStore) {
         this.serviseStore = serviseStore;
     }
-    @GetMapping("/add")
-    public void add(@RequestParam ("ID") Set<Integer> id){
-serviseStore.add(id);
-    }
-    @GetMapping("/get")
-    public Set<Integer> get (Set<Integer> get){
-        return serviseStore.get();
 
+    @GetMapping("/add")
+    public void add(@RequestParam("ID") Set<Integer> id) {
+        serviseStore.add(id);
+    }
+
+    @GetMapping("/get")
+    public Set<Integer> get() {
+        return serviseStore.get();
     }
 }
